@@ -64,9 +64,9 @@ def run():
       next=datetime.timedelta(days=1)+next
       next=next.replace(hour=schedule[0],minute=0,second=0,microsecond=0)
     else:
-      next=next.replace(hour=schedule[future_is][0])
+      next=next.replace(hour=future_is[0],minute=0,second=0,microsecond=0)
     send_button()
-    s=datetime.datetime.now().timestamp()
+    s=now.timestamp()
     e=next.timestamp()
     print(f"now: {now}, next: {next}, sleep: {(e-s)/60} [min]")
     time.sleep(e-s)
